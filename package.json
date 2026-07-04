@@ -1,0 +1,60 @@
+{
+  "name": "safe-stream-archiver",
+  "version": "0.1.0",
+  "description": "Archive Readable streams whose byte length is unknown or unreliable (e.g. remote cloud assets) into TAR or ZIP, without crashing — bounded memory, disk-spooling for TAR, streaming for ZIP.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "tar",
+    "zip",
+    "archive",
+    "stream",
+    "streaming",
+    "backpressure",
+    "content-length",
+    "cloud",
+    "s3",
+    "data-transfer"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordam312/safe-stream-archiver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nordam312/safe-stream-archiver/issues"
+  },
+  "homepage": "https://github.com/nordam312/safe-stream-archiver#readme",
+  "dependencies": {
+    "tar-stream": "^3.1.7",
+    "yazl": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/tar-stream": "^3.1.3",
+    "@types/yazl": "^2.4.5",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
