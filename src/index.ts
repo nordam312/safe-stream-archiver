@@ -1,4 +1,5 @@
 import { createTarArchive } from './tar-archive.js';
+import { createZipArchive } from './zip-archive.js';
 
 import type { Readable } from 'node:stream';
 import type { CreateArchiveOptions } from './types.js';
@@ -20,7 +21,7 @@ export function createArchive(options: CreateArchiveOptions): Readable {
     case 'tar':
       return createTarArchive(options.entries, options);
     case 'zip':
-      throw new Error('safe-stream-archiver: ZIP is not implemented yet (Stage 4).');
+      return createZipArchive(options.entries);
     default:
       throw new Error(`safe-stream-archiver: unknown format "${String(options.format)}".`);
   }
